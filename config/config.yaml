@@ -1,0 +1,85 @@
+COMMON: &common #tag
+  DEBUG: False
+  SECRET_KEY: insecure
+  # page setting
+  DEFAULT_PAGE_INDEX: 1
+  DEFAULT_PAGE_SIZE: 10
+
+  # database connection
+  SQLALCHEMY_DATABASE_URI: 'mysql+pymysql://root:mad123@localhost:3306/test?charset=utf8mb4'
+  SQLALCHEMY_TRACK_MODIFICATIONS: False
+  # logging file path
+  LOGGING_CONFIG_PATH: ./config/logging.yaml
+  # logging file store path
+  LOGGING_PATH: ./logs
+
+  # word template dir
+  REPORT_TEMPLATES: ./word_templates
+
+  # report dir
+  REPORT_PATH: ./report
+
+  # response
+  RESPONSE_MESSAGE: ./config/msg.yaml
+
+  # redis
+  REDIS_EXPIRE: 60*60
+  REDIS_HOST: 127.0.0.1
+  REDIS_PORT: 6379
+  REDIS_DB: 1
+
+  # scheduler
+  SCHEDULER_OPEN: False
+
+  # scheduler
+  SCHEDULER_API_ENABLED: True
+  JOBS:
+    - id: my_job
+      func: app.task.task:my_job
+      trigger: cron
+      hour: 12
+      minute: 0
+    - id: db_query
+      func: app.task.task:db_query
+      trigger: cron
+      hour: 12
+      minute: 10
+
+  # wechat web
+  WEB_ID: "123456789"
+  WEB_SECRET: "123456789"
+  # wechat mobile
+  APP_ID: "123456789"
+  APP_SECRET: "123456789"
+
+  # msg code
+  #key ID
+  SMS_ACCESS_KEY_ID: "45641231"
+  # access key
+  SMS_ACCESS_KEY_SECRET: "578578"
+  # signature
+  SMS_SIGN_NAME: "test"
+  AUTHENTICATION: "SMS_12345"
+  LOGIN_CONFIRMATION: "SMS_12345"
+  LOGIN_EXCEPTION: "SMS_12345"
+  USER_REGISTRATION: "SMS_12345"
+  CHANGE_PASSWORD: "SMS_12345"
+  INFORMATION_CHANGE: "SMS_12345"
+
+  # customized font
+  SIM_SUN: ./font
+
+
+
+DEVELOPMENT: &development
+  <<: *common 
+  DEBUG: True
+
+STAGING: &staging
+  <<: *common
+  SECRET_KEY: sortasecure
+
+PRODUCTION: &production
+  <<: *common
+  SECRET_KEY: mdd1##$$%^!DSA#FDSF
+  REDIS_HOST: flask_redis

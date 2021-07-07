@@ -1,0 +1,26 @@
+zh_CN: &zh
+  0: "success"
+  -1: "fail"
+  40001: "No resources found"
+  40002: "Invalid argument"
+  40003: "Incorrect account or password"
+  40004: "Verification code error"
+  40005: "Please sign in"
+  40006: "WeChat Authorization Failure"
+  40007: "Verification code expired"
+  40008: "Mobile number error"
+  40009: "Frequent operation, please try again late"
+
+en:
+  <<: *zh
+  0: "success"
+  -1: "fail"
+  40001: "No resources found"
+  40002: "Invalid argument"
+  40003: "Incorrect account or password"
+  40004: "Verification code error"
+  40005: "Please sign in"
+  40006: "WeChat Authorization Failure"
+  40007: "Verification code expired"
+  40008: "Mobile number error"
+  40009: "Frequent operation, please try again late"
