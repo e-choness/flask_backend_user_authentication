@@ -1,0 +1,102 @@
+# Ignore Python bytecode
+*.pyc
+*.pyo
+__pycache__/
+
+# Ignore virtual environments
+venv/
+env/
+*.egg-info/
+
+# Ignore logs
+logs/
+*.log
+
+# Ignore IDE settings
+.idea/
+*.iml
+
+# Ignore compiled files
+*.so
+*.dll
+*.exe
+
+# Ignore configuration files
+config/*.yaml
+config/*.conf
+
+# Ignore test reports and generated files
+report/
+*.xlsx
+*.docx
+*.pdf
+
+# Ignore temporary files
+*.tmp
+*.swp
+*.swo
+.DS_Store
+
+# Ignore cache files
+.cache/
+*.cache
+
+# Ignore Celery-related files
+celerybeat-schedule
+celerybeat.pid
+
+# Ignore Flask session files
+instance/
+*.session
+```# filepath: d:\Projects\flask_backend_user_authentication\.gitignore
+
+# Ignore Python bytecode
+*.pyc
+*.pyo
+__pycache__/
+
+# Ignore virtual environments
+venv/
+env/
+*.egg-info/
+
+# Ignore logs
+logs/
+*.log
+
+# Ignore IDE settings
+.idea/
+*.iml
+
+# Ignore compiled files
+*.so
+*.dll
+*.exe
+
+# Ignore configuration files
+config/*.yaml
+config/*.conf
+
+# Ignore test reports and generated files
+report/
+*.xlsx
+*.docx
+*.pdf
+
+# Ignore temporary files
+*.tmp
+*.swp
+*.swo
+.DS_Store
+
+# Ignore cache files
+.cache/
+*.cache
+
+# Ignore Celery-related files
+celerybeat-schedule
+celerybeat.pid
+
+# Ignore Flask session files
+instance/
+*.session
