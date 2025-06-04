@@ -4,8 +4,6 @@
 
 This project is a Flask-based backend system designed to handle user authentication. It provides essential features such as user registration, login, session management, and more. The system is built with scalability and security in mind, making it suitable for integration into larger applications.
 
----
-
 ## Features
 
 - **User Registration**: Allows new users to create accounts.
@@ -16,8 +14,6 @@ This project is a Flask-based backend system designed to handle user authenticat
 - **Logging**: Tracks system activity for debugging and monitoring.
 - **Configuration Management**: Supports environment-specific configurations.
 
----
-
 ## Prerequisites
 
 Before running the system, ensure you have the following installed:
@@ -25,8 +21,6 @@ Before running the system, ensure you have the following installed:
 - Python 3.8 or higher
 - Flask framework
 - Virtual environment tools (`venv` or `virtualenv`)
-
----
 
 ## Installation
 
@@ -50,8 +44,6 @@ Before running the system, ensure you have the following installed:
    pip install -r requirements.txt
    ```
 
----
-
 ## Configuration
 
 1. Create a `.env` file in the root directory to store environment variables:
@@ -65,8 +57,6 @@ Before running the system, ensure you have the following installed:
 
 1. Update the `config` folder with any additional settings required for your environment.
 
----
-
 ## Running the Application
 
 1. Start the Flask development server:
@@ -76,8 +66,6 @@ Before running the system, ensure you have the following installed:
    ```
 
 2. Access the application at `http://127.0.0.1:5000`.
-
----
 
 ## API Endpoints
 
@@ -112,23 +100,17 @@ Before running the system, ensure you have the following installed:
 - **Endpoint**: `/logout`
 - **Method**: POST
 
----
-
 ## Logging
 
 Logs are stored in the `logs/` directory. You can configure logging settings in the `config` folder.
-
----
 
 ## Deployment
 
 To deploy the application, ensure you configure the environment variables and database settings for production. Use a WSGI server like Gunicorn or uWSGI for deployment.
 
-### Example
+### Examples
 
 Here are examples of deployment instructions for your Flask application:
-
----
 
 ### Deployment Instructions
 
@@ -151,8 +133,6 @@ Here are examples of deployment instructions for your Flask application:
 
 3. Configure a reverse proxy (e.g., Nginx) to forward requests to Gunicorn.
 
----
-
 #### Using uWSGI (Linux/Unix)
 
 1. Install uWSGI:
@@ -172,8 +152,6 @@ Here are examples of deployment instructions for your Flask application:
    - `--threads 2`: Number of threads per worker.
 
 3. Configure a reverse proxy (e.g., Nginx) to forward requests to uWSGI.
-
----
 
 #### Using Docker
 
@@ -203,8 +181,6 @@ Here are examples of deployment instructions for your Flask application:
    docker run -p 8000:8000 flask-auth-app
    ```
 
----
-
 #### Using Azure App Service
 
 1. Install the Azure CLI:
@@ -225,23 +201,15 @@ Here are examples of deployment instructions for your Flask application:
    az webapp up --name flask-auth-app --runtime "PYTHON:3.8"
    ```
 
----
-
 Let me know if you need further details or adjustments!
-
----
 
 ## Contributing
 
 Feel free to contribute to this project by submitting issues or pull requests.
 
----
-
 ## License
 
 This project is licensed under the [MIT License](\LICENSE).
-
----
 
 ## Contact
 
