@@ -9,14 +9,14 @@ from app.utils.core import db
 
 # smss = {
 #     "SMS_ACCESS_KEY_ID": "128548974",  # key ID
-#     "SMS_ACCESS_KEY_SECRET": "323232",  # 
-#     "SMS_SIGN_NAME": "设置签名",  # 
-#     "AUTHENTICATION": "SMS_1551323",  # 
-#     "LOGIN_CONFIRMATION": "SMS_155546",  # 
-#     "LOGIN_EXCEPTION": "SMS_1556546",  # 
-#     "USER_REGISTRATION": "SMS_1551654625",  # 
-#     "CHANGE_PASSWORD": "SMS_155126456",  # 
-#     "INFORMATION_CHANGE": "SMS_1551265463",  # 
+#     "SMS_ACCESS_KEY_SECRET": "323232",  #
+#     "SMS_SIGN_NAME": "Signature_Setting",  #
+#     "AUTHENTICATION": "SMS_1551323",  #
+#     "LOGIN_CONFIRMATION": "SMS_155546",  #
+#     "LOGIN_EXCEPTION": "SMS_1556546",  #
+#     "USER_REGISTRATION": "SMS_1551654625",  #
+#     "CHANGE_PASSWORD": "SMS_155126456",  #
+#     "INFORMATION_CHANGE": "SMS_1551265463",  #
 # }
 
 
@@ -30,7 +30,8 @@ class SendSms(object):
         :param template_param: 
         """
         access_key_id = current_app.config.get('SMS_ACCESS_KEY_ID', None)
-        access_key_secret = current_app.config.get('SMS_ACCESS_KEY_SECRET', None)
+        access_key_secret = current_app.config.get(
+            'SMS_ACCESS_KEY_SECRET', None)
         sign_name = current_app.config.get("SMS_SIGN_NAME", None)
 
         if access_key_id is None:
@@ -143,7 +144,8 @@ def phone_login_or_register(phone):
                UserLoginMethod.identification == phone, ).first()
 
     if user_login:
-        user = db.session.query(User.id, User.name).filter(User.id == user_login.user_id).first()
+        user = db.session.query(User.id, User.name).filter(
+            User.id == user_login.user_id).first()
         data = dict(zip(user.keys(), user))
         return data
     else:

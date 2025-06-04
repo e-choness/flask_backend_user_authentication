@@ -53,6 +53,9 @@ Before running the system, ensure you have the following installed:
    FLASK_ENV=development
    SECRET_KEY=your_secret_key
    DATABASE_URL=sqlite:///db.sqlite3
+   REDIS_HOST=localhost
+   REDIS_PORT=6379
+   REDIS_DB=0
    ```
 
 1. Update the `config` folder with any additional settings required for your environment.

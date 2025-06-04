@@ -20,14 +20,14 @@ class Auth(object):
         """
 
         key = current_app.config.get('SECRET_KEY', cls.key)
-        now = datetime.utcnow()
+        now = datetime.now(datetime.timezone.utc)
         exp_datetime = now + timedelta(hours=exp)
         access_payload = {
             'exp': exp_datetime,
-            'flag': 0,  
-            'iat': now,  
-            'iss': 'qin',  
-            'user_id': user_id 
+            'flag': 0,
+            'iat': now,
+            'iss': 'qin',
+            'user_id': user_id
         }
         access_token = jwt.encode(access_payload, key, algorithm=algorithm)
         return access_token
@@ -44,14 +44,14 @@ class Auth(object):
         """
         key = current_app.config.get('SECRET_KEY', cls.key)
 
-        now = datetime.utcnow()
+        now = datetime.now(datetime.timezone.utc)
         exp_datetime = now + timedelta(days=fresh)
         refresh_payload = {
             'exp': exp_datetime,
-            'flag': 1,  
-            'iat': now,  
-            'iss': 'qin',  
-            'user_id': user_id  
+            'flag': 1,
+            'iat': now,
+            'iss': 'qin',
+            'user_id': user_id
         }
 
         refresh_token = jwt.encode(refresh_payload, key, algorithm=algorithm)
@@ -61,7 +61,7 @@ class Auth(object):
     def encode_auth_token(cls, user_id: str,
                           exp: float = 2,
                           fresh: float = 30,
-                          algorithm: str = 'HS256') -> [str, str]:
+                          algorithm: str = 'HS256') -> list[str]:
         """
         :param user_id: 
         :param exp: access_token expire time
