@@ -161,7 +161,7 @@ Here are examples of deployment instructions for your Flask application:
 1. Create a `Dockerfile`:
 
    ```dockerfile
-   FROM python:3.8-slim
+   FROM python:3.12-slim
 
    WORKDIR /app
 
@@ -201,7 +201,7 @@ Here are examples of deployment instructions for your Flask application:
 3. Create an App Service plan and deploy the application:
 
    ```bash
-   az webapp up --name flask-auth-app --runtime "PYTHON:3.8"
+   az webapp up --name flask-auth-app --runtime "PYTHON:3.12"
    ```
 
 Let me know if you need further details or adjustments!
