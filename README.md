@@ -46,7 +46,7 @@ flask_backend_user_authentication/
 ### Clone the Project
 
 ```bash
-git clone https://github.com/e-choness/user-questionaire.git
+git clone https://github.com/e-choness/user-questionaire-backend.git
 ```
 
 ### Navigate to Project Directory
