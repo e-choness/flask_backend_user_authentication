@@ -24,7 +24,7 @@ This project is the backend service for a questionnaire application. It handles 
 ## Project Structure
 
 ```bash
-flask_backend_user_authentication/
+user-questionaire-backend/
 ├── app/                # Contains the main application logic
 ├── config/             # Configuration files for the project
 ├── database/           # Database-related files and migrations
