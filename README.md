@@ -7,13 +7,13 @@ This project is the backend service for a questionnaire application. It handles 
 ## Server-side
 
 - **Database**: The backend uses **MongoDB**, a NoSQL database. While MySQL is also a viable option, MongoDB was chosen for its flexibility in data insertion.
-  - **Data Handling**: For questionnaire submissions, data insertion into MongoDB is straightforward. However, for robustness, data format validation should be considered. If using MySQL with JSON fields, handling would also be manageable.
-  - **Data Statistics**:
-    - **Current Approach**: The project currently calculates statistics by querying the database directly upon API request. This is acceptable for small-scale personal projects.
-    - **Scalability Concerns**: For larger datasets or questionnaires with many questions, this direct query and computation method can be time-consuming.
-    - **Proposed Improvements**:
-      1. **Redis Caching**: After a user submits a form and the server responds with a 200 status, the backend could asynchronously recalculate the form's statistical information. This data would then be stored in both Redis and the database. When a questionnaire publisher requests data analysis, statistics can be quickly retrieved from Redis.
-      2. **Dedicated Statistics Table**: An alternative to Redis could be a separate table for storing aggregated statistics. Each time a user submits a form, this table would be updated. This avoids querying multiple tables for calculations. However, maintaining data consistency could be challenging. For instance, if a questionnaire publisher modifies or deletes a question or changes option order, the statistics table would need complex updates.
+- **Data Handling**: For questionnaire submissions, data insertion into MongoDB is straightforward. However, for robustness, data format validation should be considered. If using MySQL with JSON fields, handling would also be manageable.
+- **Data Statistics**:
+- **Current Approach**: The project currently calculates statistics by querying the database directly upon API request. This is acceptable for small-scale personal projects.
+- **Scalability Concerns**: For larger datasets or questionnaires with many questions, this direct query and computation method can be time-consuming.
+- **Proposed Improvements**:
+  1. **Redis Caching**: After a user submits a form and the server responds with a 200 status, the backend could asynchronously recalculate the form's statistical information. This data would then be stored in both Redis and the database. When a questionnaire publisher requests data analysis, statistics can be quickly retrieved from Redis.
+  2. **Dedicated Statistics Table**: An alternative to Redis could be a separate table for storing aggregated statistics. Each time a user submits a form, this table would be updated. This avoids querying multiple tables for calculations. However, maintaining data consistency could be challenging. For instance, if a questionnaire publisher modifies or deletes a question or changes option order, the statistics table would need complex updates.
 
 ## Front-end
 
