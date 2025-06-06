@@ -1,9 +1,8 @@
-# gunicorn.py
+bind = '127.0.0.1:5001'  # Bind IP and port number
 
-bind = '127.0.0.1:5001'  # 绑定ip和端口号
-
-workers = 1  # 进程数
-threads = 2  # 指定每个进程开启的线程数
-loglevel = 'debug'  # 日志级别，这个日志级别指的是错误日志的级别，而访问日志的级别无法设置
-accesslog = "/home/ubuntu/questionnaire/log/gunicorn_access.log"  # 访问日志文件
-errorlog = "/home/ubuntu/questionnaire/log/gunicorn_error.log"  # 错误日志文件
+workers = 1  # Number of worker processes
+threads = 2  # Number of threads per worker process
+# Log level (for error logs; access log level cannot be set here)
+loglevel = 'debug'
+accesslog = "/home/ubuntu/questionnaire/log/gunicorn_access.log"  # Access log file
+errorlog = "/home/ubuntu/questionnaire/log/gunicorn_error.log"  # Error log file
